@@ -58,13 +58,16 @@ object QueryUtils {
                 // Extract the value for the key called "url"
                 val title = volumeInfo.getString("title")
 
-                // Extract the value for the key called "authors"
-                val authorsArray = volumeInfo.getJSONArray("authors")
-
                 val authors = mutableListOf<String>()
 
-                for(j in 0 until authorsArray.length()) {
-                    authors.add(authorsArray[j].toString())
+                if(volumeInfo.has("authors")) {
+
+                    // Extract the value for the key called "authors"
+                    val authorsArray = volumeInfo.getJSONArray("authors")
+
+                    for (j in 0 until authorsArray.length()) {
+                        authors.add(authorsArray[j].toString())
+                    }
                 }
 
                 // Create a new {@link Book} object with the authors and title from the JSON response.
