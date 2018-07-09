@@ -12,11 +12,11 @@ import android.content.Context
 class BooksLoader (context: Context, private val url: String?) :
         AsyncTaskLoader<List<Book>>(context) {
 
-    companion object {
-
-        /** Tag for log messages  */
-        private val LOG_TAG = BooksLoader::class.java.name
-    }
+//    companion object {
+//
+//        /** Tag for log messages  */
+//        private val LOG_TAG = BooksLoader::class.java.name
+//    }
 
     override fun onStartLoading() {
         forceLoad()
