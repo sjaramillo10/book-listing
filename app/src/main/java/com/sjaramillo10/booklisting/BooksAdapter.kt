@@ -21,6 +21,10 @@ class BooksAdapter internal constructor(context: Activity, books: ArrayList<Book
         val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
         tvTitle.text = book.title
 
+        val tvAuthors: TextView = itemView.findViewById(R.id.tvAuthors)
+        val authors = book.authors.joinToString()
+        tvAuthors.text = authors
+
         return itemView
     }
 
